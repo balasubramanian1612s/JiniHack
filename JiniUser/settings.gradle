@@ -1,0 +1,2 @@
+rootProject.name='JiniUser'
+include ':app'
