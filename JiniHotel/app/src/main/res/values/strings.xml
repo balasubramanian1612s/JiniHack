@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">JiniHotel</string>
+    <string name="title_activity_hotel_location">Map</string>
 </resources>
