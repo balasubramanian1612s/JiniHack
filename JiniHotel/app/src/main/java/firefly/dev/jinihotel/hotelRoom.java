@@ -85,7 +85,7 @@ public class hotelRoom extends AppCompatActivity {
 
                 for (DataSnapshot ds: dataSnapshot.getChildren()){
 
-                    Log.i("StringsKey",ds.getKey());
+                    //Log.i("StringsKey",ds.getKey());
                     display(ds.getKey(),"Hi");
                     AmenitiesGetter newData=ds.child("Amenities").getValue(AmenitiesGetter.class);
                     Log.i("StringsKey",newData.getComplementry());
