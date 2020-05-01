@@ -2,6 +2,7 @@ package firefly.dev.jinihotel;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -30,7 +31,7 @@ public class addNewRoom extends AppCompatActivity {
         setContentView(R.layout.add_new_room);
 
         database=FirebaseDatabase.getInstance();
-        reference=database.getReference().child("HotelId").child("Rooms");
+        reference=database.getReference().child("Hotels").child("HotelId").child("Rooms");
 
 
         roomName=findViewById(R.id.roomName);
@@ -90,6 +91,11 @@ public class addNewRoom extends AppCompatActivity {
 
                 }
                 reference.child("Complementry").setValue(com);
+
+                finish();
+                overridePendingTransition(0,0);
+                startActivity(new Intent(addNewRoom.this,hotelRoom.class));
+                overridePendingTransition(0,0);
 
 
 

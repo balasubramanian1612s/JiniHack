@@ -11,10 +11,19 @@
         android:layout_height="match_parent"
         android:id="@+id/hotelRoomsList"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:textColor="#000000"
+        android:text="Could Not Find Any Rooms! Add it Here!"/>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:id="@+id/addRoom"
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"/>
 
