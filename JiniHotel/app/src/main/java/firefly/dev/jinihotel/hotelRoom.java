@@ -26,6 +26,7 @@ public class hotelRoom extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference reference;
+    int i=1;
 
     FloatingActionButton floatingActionButton;
 
@@ -43,6 +44,10 @@ public class hotelRoom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hotel_room);
         floatingActionButton=findViewById(R.id.addRoom);
+        database=FirebaseDatabase.getInstance();
+        reference=database.getReference().child("Hotels").child("HotelId").child("Rooms");
+
+        getData();
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,19 +63,16 @@ public class hotelRoom extends AppCompatActivity {
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
 
-            NotificationChannel chan1 = new NotificationChannel(chan_ID,chan_name, NotificationManager.IMPORTANCE_DEFAULT);
-            chan1.setDescription( chan_desc );
+            NotificationChannel chan = new NotificationChannel(chan_ID,chan_name, NotificationManager.IMPORTANCE_DEFAULT);
+            chan.setDescription( chan_desc );
             NotificationManager manager = getSystemService( NotificationManager.class );
-            manager.createNotificationChannel(chan1);
+            manager.createNotificationChannel(chan);
         }
 
 
 
 
-        database=FirebaseDatabase.getInstance();
-        reference=database.getReference().child("Hotels").child("HotelId").child("Rooms");
 
-        getData();
 
 
     }
@@ -89,7 +91,7 @@ public class hotelRoom extends AppCompatActivity {
                     Log.i("StringsKey",newData.getComplementry());
                     Log.i("StringsLan",newData.getFreeLaundry());
                     Log.i("StringsWifi",newData.getFreeWifi());
-                    Log.i("StringsPool",newData.getPool());
+                   Log.i("StringsPool",newData.getPool());
 
                 }
 
@@ -107,14 +109,15 @@ public class hotelRoom extends AppCompatActivity {
 
     private void display(String title,String text){
 
-        NotificationCompat.Builder  bui2;
-        bui2 = new NotificationCompat.Builder(this,chan_ID )
+        i=i++;
+        NotificationCompat.Builder  bui;
+        bui = new NotificationCompat.Builder(this,chan_ID )
                 .setContentTitle( title )
                 .setContentText(text)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setSmallIcon(R.drawable.ic_launcher_foreground);
         NotificationManagerCompat manager = NotificationManagerCompat.from(this);
-        manager.notify(1,bui2.build());
+        manager.notify(i,bui.build());
     }
 
 

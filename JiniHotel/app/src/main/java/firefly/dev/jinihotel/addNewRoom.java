@@ -15,6 +15,8 @@ import android.widget.Spinner;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import firefly.dev.jinihotel.getters.AmenitiesGetter;
+
 public class addNewRoom extends AppCompatActivity {
 
     EditText roomName,tarrif,bedType,roomSize;
@@ -60,10 +62,8 @@ public class addNewRoom extends AppCompatActivity {
 
                 reference=reference.child(roomName.getText().toString());
                 reference.child("Tarrif").setValue(tarrif.getText().toString());
+
                 reference=reference.child("Amenities");
-                reference.child("Pool").setValue(SpinPool.getSelectedItem().toString());
-                reference.child("FreeWifi").setValue(SpinWifi.getSelectedItem().toString());
-                reference.child("FreeLaundry").setValue(SpinLaundry.getSelectedItem().toString());
                 String com="";
                 if (dinnerCB.isChecked()){
 
@@ -90,7 +90,10 @@ public class addNewRoom extends AppCompatActivity {
                     com=com+", ESCB";
 
                 }
-                reference.child("Complementry").setValue(com);
+
+
+                AmenitiesGetter newData=new AmenitiesGetter(SpinPool.getSelectedItem().toString(),SpinWifi.getSelectedItem().toString(),SpinLaundry.getSelectedItem().toString(),com);
+                reference.setValue(newData);
 
                 finish();
                 overridePendingTransition(0,0);

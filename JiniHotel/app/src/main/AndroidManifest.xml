@@ -35,15 +35,14 @@
             android:label="@string/title_activity_hotel_location"/>
 
         <activity android:name=".Hotel_Info" />
-        <activity android:name=".MainActivity" >
+        <activity android:name=".hotelRoom" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-=
-        <activity android:name=".hotelRoom" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".addNewRoom"/>
 
 
