@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>Hotel Login Portal</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+ <div class="getit">
+  <div class="card-signin">
+  <div id="login_div" class="main-div">
+    <h3>Hotel Login Portal:</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
+    <br>
+    <button onclick="create()">Create Account</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">You have successfully signed in Please wait for the page to load..</p>
+    <!--button onclick="logout()">Logout</button>
+    <br>
+    <button onclick="send_verification()">Send Verification</button-->
+  </div>
+</div>
+</div>
+
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyDmsLpmW-YujiaE1i2PzOZIn4NAJVgmZuU",
+    authDomain: "bookjini-firefly.firebaseapp.com",
+    databaseURL: "https://bookjini-firefly.firebaseio.com",
+    projectId: "bookjini-firefly",
+    storageBucket: "bookjini-firefly.appspot.com",
+    messagingSenderId: "637317936718",
+    appId: "1:637317936718:web:30f9fad2e42d3b114b351f",
+    measurementId: "G-TWT9XSG0T1"
+  };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+
+</body>
+</html>

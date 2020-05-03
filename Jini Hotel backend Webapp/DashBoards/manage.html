@@ -8,10 +8,12 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
-    <script src ="stats.js"></script>
+    <script src ="manage.js"></script>
     <link href="main.css" rel='stylesheet'/>
     <!-- Bootstrap files-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <body>
     <div class="wrapper">
         <div class="sidebar">
@@ -20,8 +22,8 @@
             
             <h2>Account</h2>
             <ul>
-                <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="manage.html"><i class="fas fa-user"></i>Manage Data</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>Manage Data</a></li>
                 <li><a href="history.html"><i class="fas fa-project-diagram"></i>History</a></li>
                 <li><a href="#"><i class="fas fa-blog"></i>Report bugs</a></li>
                 <!--li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li>
@@ -35,33 +37,36 @@
           </div>
         </div>
         <div class="main_content">
-          <div class="header">Dashboard</div> 
-          <div id='info'>
-              <div class="card">
-                  <div class="card-body">
-                    <div id="table" class="table-editable">
-                      <table class="table table-bordered table-responsive-md table-striped text-center">
-                        <thead>
-                          <tr>
-                            <th class="text-center">#</th>
-                            <th class="text-center">Date of arrival</th>
-                            <th class="text-center">Time of arrival</th>
-                            <th class="text-center">Days of Stay</th>
-                            <th class="text-center">Name</th>
-                            <th class="text-center">Room Type</th>
-                            
-                          </tr>
-                        </thead>
-                        <tbody id="mains">
-                       
-                        </tbody>
-                      </table>
+            <div class="header">Manage</div> 
+            <div id='info'>
+                <div class="card">
+                    <div class="card-body">
+                        <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+                            class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+                      <div id="table" class="table-editable">
+                        <table class="table table-bordered table-responsive-md table-striped text-center">
+                          <thead>
+                            <tr>
+                              <th class="text-center">Date/time of arrival</th>
+                              <th class="text-center">Days of Stay</th>
+                              <th class="text-center">Name</th>
+                              <th class="text-center">Room Type</th>
+                              
+                              <th class="text-center">Change</th>
+                              <th class="text-center">Remove</th>
+                            </tr>
+                          </thead>
+                          <tbody id="mains">
+                         
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
-                </div>
-          </div>
-      </div>
+            </div>
+        </div>
   </body>
+  <script src = 'tnt.js'></script>
   </html>
 
   
