@@ -99,10 +99,12 @@ public class hotelPicture extends AppCompatActivity {
                                     Log.i("ShopLink",shopPicLinks);
                                     Log.i("Link",url);
                                     isPicUploaded=true;
-                                    FirebaseDatabase.getInstance().getReference().child(Hotel_Info.nameHotel).child("Info").child("picLinks").setValue(shopPicLinks);
+                                    FirebaseDatabase.getInstance().getReference().child("Hotels").child(Hotel_Info.nameHotel).child("Info").child("picLinks").setValue(shopPicLinks);
                                 }
                             });
-
+                            overridePendingTransition(0,0);
+                            startActivity(new Intent(getApplicationContext(),MainScreen.class));
+                            overridePendingTransition(0,0);
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override

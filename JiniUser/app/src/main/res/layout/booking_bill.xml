@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/berlinregular"
+        android:gravity="center_horizontal"
+        android:text="Confirm Booking"
+        android:textColor="@color/orange"
+        android:textSize="34dp" />
+
+    <TextView
+        android:id="@+id/hotelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="55dp"
+        android:fontFamily="@font/berlinregular"
+        android:text="Hotel Park"
+        android:textColor="@color/orange"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hotelName"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/berlinregular"
+        android:text="NO 56, Avinashi Road, Opposite to Lakshmi mills,Coimbatore,641002"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/priceTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView5"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="39dp"
+        android:fontFamily="@font/berlinregular"
+        android:text="Price : "
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/priceTvValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView5"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="38dp"
+        android:layout_toEndOf="@id/priceTv"
+        android:fontFamily="@font/berlinregular"
+        android:text="INR. 2,999.00/-"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/gstTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/priceTv"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/berlinregular"
+        android:text="Price inclusive of all taxes and GST"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/gst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@id/gstTv"
+        android:fontFamily="@font/berlinregular"
+        android:textSize="24sp"
+        android:textColor="@color/orange"
+
+        android:text="Amount : INR.3196.00/-" />
+
+    <Button
+        android:id="@+id/checkoutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gst"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:background="@drawable/orange_card_bg"
+        android:fontFamily="@font/berlinregular"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="CHECKOUT"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

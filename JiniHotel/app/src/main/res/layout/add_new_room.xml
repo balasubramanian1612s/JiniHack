@@ -4,57 +4,155 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".addNewRoom">
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/introTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add a New Room"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/orange"
+        android:fontFamily="@font/berlinregular"
+        android:layout_marginTop="15dp"
+        android:padding="5dp"
+        android:textSize="30dp"/>
+
+
+    <TextView
+        android:id="@+id/roomTypeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Room type"
+        android:layout_below="@id/introTv"
+        android:textColor="@color/black"
+        android:fontFamily="@font/berlinregular"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/roomName"
+        android:layout_below="@id/roomTypeTv"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:hint="Premium,classic,normal,etc"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tarrifTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tarrif per Period"
+        android:layout_below="@id/roomName"
+        android:textColor="@color/black"
+        android:fontFamily="@font/berlinregular"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp"
+        android:textSize="20dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/roomName"
-        android:hint="Room Name. Premium, Normal, etc"
-        android:layout_margin="10dp"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/tarrif"
-        android:layout_below="@id/roomName"
-        android:hint="Room Name. Premium, Normal, etc"
+        android:layout_below="@id/tarrifTv"
         android:layout_margin="10dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/amenityTv"
+        android:fontFamily="@font/berlinregular"
+        android:textColor="@color/orange"
+        android:layout_margin="10dp"
         android:layout_below="@id/tarrif"
         android:textSize="20dp"
-        android:text="amenities"/>
+        android:text="Amenities"/>
+
+    <TextView
+        android:id="@+id/bedTypeTv"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bed type"
+        android:layout_below="@id/amenityTv"
+        android:textColor="@color/black"
+        android:fontFamily="@font/berlinregular"
+        android:layout_marginTop="7dp"
+        android:padding="5dp"
+        android:textSize="20dp"/>
 
     <EditText
+        android:id="@+id/bedType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/amenityTv"
-        android:id="@+id/bedType"
-        android:hint="Room Name. Premium, Normal, etc"
-        android:layout_margin="10dp"/>
+        android:layout_below="@id/bedTypeTv"
+        android:layout_margin="10dp"
+        android:hint="single or double bed" />
+
+    <TextView
+        android:id="@+id/wifiTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wifi"
+        android:layout_below="@id/bedType"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/berlinregular"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textSize="20dp"/>
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:id="@+id/SpinWifi"
-        android:layout_below="@id/bedType"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/wifiTv"
         android:hint="Room Name. Premium, Normal, etc"
-        android:layout_margin="10dp"/>
+        android:layout_marginTop="7dp"/>
+
+    <TextView
+        android:id="@+id/LaundryTv"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content"
+        android:text="Laundry"
+        android:layout_below="@id/SpinWifi"
+        android:textColor="@color/black"
+        android:fontFamily="@font/berlinregular"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textSize="20dp"/>
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@id/SpinWifi"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/LaundryTv"
         android:id="@+id/SpinLaundry"
         android:hint="Room Name. Premium, Normal, etc"
         android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/poolTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Swimming Pool"
+        android:layout_below="@id/SpinLaundry"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/berlinregular"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textSize="20dp"/>
+
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@id/SpinLaundry"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/poolTv"
         android:id="@+id/SpinPool"
         android:hint="Room Name. Premium, Normal, etc"
         android:layout_margin="10dp"/>
@@ -65,67 +163,167 @@
         android:layout_height="wrap_content"
         android:id="@+id/roomSize"
         android:layout_below="@id/SpinPool"
-        android:hint="Room Name. Premium, Normal, etc"
+        android:hint="Room Size and Special About!"
         android:layout_margin="10dp"/>
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/addImage"
-    android:layout_below="@id/roomSize"
-    android:text="addImages"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/add360image"
-        android:layout_below="@id/addImage"
-        android:text="add 360"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_below="@id/add360image"
-        android:orientation="vertical"
-        android:id="@+id/cbLinearLayout"
-        android:layout_height="wrap_content">
+        android:id="@+id/imagelayoutLinear"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/roomSize"
+        android:orientation="horizontal">
 
-    <TextView
+        <Button
+            android:id="@+id/addImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/roomSize"
+            android:background="@drawable/button_orange_bg"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:fontFamily="@font/berlinregular"
+            android:paddingTop="2dp"
+            android:layout_marginLeft="60dp"
+            android:textColor="@color/white"
+            android:paddingBottom="2dp"
+            android:text="addImages" />
+
+        <Button
+            android:id="@+id/add360image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/addImage"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="60dp"
+            android:background="@drawable/button_orange_bg"
+            android:fontFamily="@font/berlinregular"
+            android:paddingLeft="10dp"
+            android:paddingTop="2dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="2dp"
+
+            android:text="upload image"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cbLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="complementry"
-        android:textSize="20dp"
-        android:id="@+id/complementryTv"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:id="@+id/dinnerCB"
-        android:layout_height="wrap_content"
-        android:text="Dinner"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/breakfastCB"
-        android:text="Breakfast"/>
+        android:layout_below="@id/imagelayoutLinear"
+        android:orientation="vertical">
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:id="@+id/lunchCB"
-        android:layout_height="wrap_content"
-        android:text="Lunch"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:id="@+id/brunchCB"
-        android:layout_height="wrap_content"
-        android:text="Brunch"/>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:id="@+id/eveningSnackCB"
-        android:layout_height="wrap_content"
-        android:text="Evening Snacks"/>
+        <TextView
+            android:id="@+id/complementryTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Complementry"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/berlinregular"
+            android:textColor="@color/orange"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/noComplementryCB"
+                android:layout_marginLeft="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/berlinregular"
+                android:textColor="@color/black"
+                android:buttonTint="@color/orange"
+                android:text="No Complementry" />
+
+            <CheckBox
+                android:id="@+id/dinnerCB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:fontFamily="@font/berlinregular"
+                android:textColor="@color/black"
+                android:buttonTint="@color/orange"
+                android:text="Dinner" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/breakfastCB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/berlinregular"
+                android:textColor="@color/black"
+                android:buttonTint="@color/orange"
+                android:text="Breakfast" />
+
+            <CheckBox
+                android:id="@+id/lunchCB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="93dp"
+                android:fontFamily="@font/berlinregular"
+                android:textColor="@color/black"
+                android:buttonTint="@color/orange"
+                android:text="Lunch" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/brunchCB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:fontFamily="@font/berlinregular"
+                android:textColor="@color/black"
+                android:buttonTint="@color/orange"
+                android:text="Brunch" />
+
+            <CheckBox
+                android:id="@+id/eveningSnackCB"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="109dp"
+                android:fontFamily="@font/berlinregular"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/orange"
+                android:text="Evening Snacks" />
+        </LinearLayout>
 
     </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="finish up"
+        android:text="FINISH UP"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_orange_bg"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/berlinregular"
+        android:textSize="17dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
         android:layout_below="@+id/cbLinearLayout"
         android:id="@+id/addRoomdata"/>
 

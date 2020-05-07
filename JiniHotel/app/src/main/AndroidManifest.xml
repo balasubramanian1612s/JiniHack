@@ -7,7 +7,7 @@
          location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +17,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".hotelPicture"></activity>
+        <activity android:name=".FoodDeliveryRequests"/>
+
+        <activity android:name=".RoomServiceRequests" />
+
+        <activity android:name=".ValetRequests" />
+
+        <activity android:name=".LaundryRequests" />
+
+
+        <activity android:name=".ServiceRequests" />
+        <activity android:name=".hotelPicture" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -32,17 +42,35 @@
 
         <activity
             android:name=".HotelLocation"
+
             android:label="@string/title_activity_hotel_location"/>
 
-        <activity android:name=".Hotel_Info" />
-        <activity android:name=".hotelRoom" >
+        <activity android:name=".HotelMenu" />
+
+
+
+
+        <activity android:name=".Hotel_Info"/>
+
+        <activity android:name=".hotelRoom" />
+        <activity android:name=".MainActivity" />
+
+
+
+
+        <activity android:name=".MainScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+
+
+        <activity android:name=".bookings" />
+
+        <activity android:name=".DailyMenu"/>
+        <activity android:name=".SpecialMenu"/>
         <activity android:name=".addNewRoom"/>
 
 

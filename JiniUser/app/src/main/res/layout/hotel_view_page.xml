@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".hotelViewPage">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/hotelViewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp">
+
+                    </androidx.viewpager.widget.ViewPager>
+
+                    <TextView
+                        android:id="@+id/hotelNameTv1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="@font/berlinregular"
+                        android:padding="10dp"
+                        android:text="Hotel Name"
+                        android:textColor="@color/orange"
+
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:id="@+id/hotelAddressTv1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="@font/berlinregular"
+                        android:padding="10dp"
+                        android:text="Hotel Address"
+                        android:textColor="@color/black"
+
+                        android:textSize="19dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/parkLay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/card"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/parkingIv"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="3dp"
+                    app:srcCompat="@drawable/download" />
+
+                <TextView
+                    android:id="@+id/ParkingTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/berlinregular"
+                    android:gravity="center"
+                    android:paddingLeft="15dp"
+                    android:text="Hotel Information"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/poolLay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/parkLay"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/poolIv"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="3dp"
+                    app:srcCompat="@drawable/pool" />
+
+                <TextView
+                    android:id="@+id/swimmingPoolTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/berlinregular"
+                    android:paddingLeft="15dp"
+                    android:text="Hotel Information"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/starlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/poolLay"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/starIv"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/star" />
+
+                <TextView
+                    android:id="@+id/starCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/berlinregular"
+                    android:gravity="center"
+                    android:paddingLeft="15dp"
+                    android:text="Hotel Information"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/roomAvailableTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/starlay"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/berlinregular"
+                android:paddingLeft="10dp"
+                android:text="Rooms Availabe"
+                android:textColor="@color/orange"
+                android:textSize="24sp" />
+
+            <ListView
+                android:id="@+id/allRoomsLV"
+                android:layout_width="match_parent"
+                android:scrollbars="none"
+                android:layout_height="426dp"
+                android:layout_below="@id/roomAvailableTv"
+                android:layout_marginTop="7dp">
+
+            </ListView>
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        app:backgroundTint="@drawable/selector"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="#000000"
+        app:menu="@menu/nav_bar" />
+</RelativeLayout>

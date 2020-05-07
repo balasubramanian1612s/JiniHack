@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="firefly.dev.jiniuser">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -9,6 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".wbRoomUnlock"></activity>
+        <activity android:name=".qrScan" />
+        <activity android:name=".chatBotFirefly" />
+        <activity android:name=".FoodDelivery" />
+
+        <activity android:name=".bookingPage" />
+        <activity android:name=".booking_bill" />
+        <activity android:name=".scanningQR_page" />
+        <activity android:name=".TouristPlaces" />
+        <activity android:name=".hotelViewPage" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,6 +28,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+
+        <activity android:name=".scanningQR_page" />
+        <activity android:name=".TouristPlaces" />
+        <activity android:name=".hotelViewPage" />
+        <activity android:name=".bookingPage" />
+
+
+
+        <activity android:name=".bookings" />
+        <activity android:name=".ValetService" />
+        <activity android:name=".bookingInfo" />
+        <activity android:name=".LaundryService" />
+        <activity android:name=".UserServices" />
+        <activity android:name=".roomViewPage" />
+        <activity android:name=".all_hotels" />
+        <activity android:name=".RoomService" />
     </application>
 
 </manifest>

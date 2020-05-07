@@ -80,7 +80,7 @@ public class HotelLocation extends FragmentActivity implements OnMapReadyCallbac
             @Override
             public boolean onQueryTextSubmit(String s) {
 
-                mMap.clear();
+
                 String location = searchView.getQuery().toString();
                 List<Address> addressList = null;
 
@@ -89,37 +89,40 @@ public class HotelLocation extends FragmentActivity implements OnMapReadyCallbac
                     Geocoder geocoder = new Geocoder(HotelLocation.this);
                     try {
                         addressList = geocoder.getFromLocationName(location, 1);
-                    }catch(Exception e){
-                        e.printStackTrace();
-                    }
-                    Log.i("address", addressList.get(0) + "");
 
-                    if (!addressList.isEmpty()) {
 
-                        Address address = addressList.get(0);
-                        LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
-                        mMap.addMarker(new MarkerOptions().position(latLng).title(location).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
-                        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18f));
-                        Location loc = new Location(LocationManager.GPS_PROVIDER);
-                        loc.setLatitude(latLng.latitude);
-                        loc.setLongitude(latLng.longitude);
-                        userLoc = loc;
+                        Log.i("address", addressList.get(0) + "");
 
-                    } else {
-                        Toast.makeText(HotelLocation.this, "Search for the location with a little more detail", Toast.LENGTH_SHORT).show();
-                        if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                            if(userLoc!=null) {
-                                userLoc = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
-                                LatLng pos = new LatLng(userLoc.getLatitude(), userLoc.getLongitude());
-                                mMap.addMarker(new MarkerOptions().position(pos).title("Your Location").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
-                                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pos, 18f));
+                        if (!addressList.isEmpty()) {
+                            mMap.clear();
+
+                            Address address = addressList.get(0);
+                            LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
+                            mMap.addMarker(new MarkerOptions().position(latLng).title(location).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
+                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 18f));
+                            Location loc = new Location(LocationManager.GPS_PROVIDER);
+                            loc.setLatitude(latLng.latitude);
+                            loc.setLongitude(latLng.longitude);
+                            userLoc = loc;
+
+                        } else {
+                            Toast.makeText(HotelLocation.this, "Search for the location with a little more detail", Toast.LENGTH_SHORT).show();
+                            if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                                if (userLoc != null) {
+                                    userLoc = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
+                                    LatLng pos = new LatLng(userLoc.getLatitude(), userLoc.getLongitude());
+                                    mMap.addMarker(new MarkerOptions().position(pos).title("Your Location").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+                                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pos, 18f));
+                                }
                             }
                         }
+
+
+                    }catch(Exception e) {
+                        e.printStackTrace();
                     }
-
-
-
                 }
+
                 return false;
             }
 
@@ -184,8 +187,8 @@ public class HotelLocation extends FragmentActivity implements OnMapReadyCallbac
                 if(userLoc!=null) {
                     String lat = userLoc.getLatitude() + "";
                     String lon = userLoc.getLongitude() + "";
-                    FirebaseDatabase.getInstance().getReference().child(Hotel_Info.nameHotel).child("Info").child("lat").setValue(lat);
-                    FirebaseDatabase.getInstance().getReference().child(Hotel_Info.nameHotel).child("Info").child("lon").setValue(lon);
+                    FirebaseDatabase.getInstance().getReference().child("Hotels").child(Hotel_Info.nameHotel).child("Info").child("lat").setValue(lat);
+                    FirebaseDatabase.getInstance().getReference().child("Hotels").child(Hotel_Info.nameHotel).child("Info").child("lon").setValue(lon);
 
                     startActivity(new Intent(getApplicationContext(),hotelPicture.class));
 

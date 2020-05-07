@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".bookingInfo">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <!--    <EditText-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/fromDate"-->
+<!--        android:hint="Date Of Booking"/>-->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        app:backgroundTint="@drawable/selector"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="#000000"
+        app:menu="@menu/nav_bar" />
+
+    <TextView
+        android:id="@+id/fromDateTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/berlinregular"
+        android:textSize="22sp"
+        android:text="Date of Booking" />
+
+    <EditText
+        android:id="@+id/fromDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@id/fromDateTv"
+        android:layout_margin="10dp"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/checkinTimeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/berlinregular"
+        android:textColor="@color/orange"
+        android:textSize="27sp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/fromDate"
+        android:text="CheckIn Time" />
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkinTimeTv" />
+
+    <TextView
+        android:id="@+id/noOfStayDaysTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timePicker"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/berlinregular"
+        android:textSize="22sp"
+        android:text="Number of Days" />
+
+    <EditText
+        android:id="@+id/noOfDays"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_margin="10dp"
+        android:hint="No Of Stay Days"
+        android:layout_below="@id/noOfStayDaysTv"
+        android:inputType="number" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/orange_card_bg"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:paddingLeft="20dp"
+        android:layout_centerInParent="true"
+        android:paddingRight="20dp"
+        android:id="@+id/nextBooking"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:text="Next"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/orange"
+        android:visibility="invisible"
+        android:id="@+id/textView"
+        android:layout_below="@+id/noOfDays"
+        android:fontFamily="@font/berlinregular"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:text="Badly Formatted Date! Please enter in DD-MM-YYYY"/>
+
+    </RelativeLayout>
+
+</ScrollView>

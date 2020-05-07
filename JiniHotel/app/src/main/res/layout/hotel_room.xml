@@ -9,6 +9,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="10dp"
         android:id="@+id/hotelRoomsList"/>
 
     <TextView
@@ -22,9 +23,23 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@id/bottomBar"
         android:layout_alignParentRight="true"
+        android:src="@drawable/plus"
         android:id="@+id/addRoom"
-        android:layout_alignParentBottom="true"
         android:layout_margin="20dp"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomBar"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemTextColor="#000000"
+        app:itemBackground="@color/white"
+        app:backgroundTint="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/nav_bar" />
+
 
 </RelativeLayout>

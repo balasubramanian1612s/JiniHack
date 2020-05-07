@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".scanningQR_page">
+
+    <TextView
+        android:id="@+id/checingInTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/berlinregular"
+        android:text="Checking in at"
+        android:textColor="@color/orange"
+        android:textSize="27sp" />
+
+    <TextView
+        android:id="@+id/hotelNameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checingInTv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/berlinregular"
+        android:text="Hotel Name"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/checkInTimeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hotelNameTv"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:text="Checkin Time"
+        android:textColor="@color/black"
+        android:textSize="25dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="35dp"
+        android:layout_height="33dp"
+        android:layout_below="@id/hotelNameTv"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/checkInTimeTv"
+        app:srcCompat="@drawable/time" />
+
+    <TextView
+        android:id="@+id/checkinTimeValueTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hotelNameTv"
+        android:layout_marginLeft="20dp"
+        android:layout_toEndOf="@id/imageView"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:text="time" />
+
+    <ImageView
+        android:id="@+id/qrCodeIv"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@id/checkinTimeValueTv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp" />
+
+    <Button
+        android:id="@+id/valetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/qrCodeIv"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/berlinregular"
+        android:background="@drawable/orange_card_bg"
+        android:layout_centerHorizontal="true"
+        android:textSize="22dp"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:text="Valet Parking" />
+    <Button
+        android:id="@+id/baggageBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/valetBtn"
+        android:textColor="@color/white"
+        android:fontFamily="@font/berlinregular"
+        android:background="@drawable/orange_card_bg"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:text="Baggage Porter" />
+
+    <ImageView
+        android:id="@+id/valetIv"
+        android:layout_width="51dp"
+        android:layout_height="47dp"
+        android:layout_below="@id/qrCodeIv"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_toStartOf="@id/valetBtn"
+        app:srcCompat="@drawable/valet" />
+
+    <ImageView
+        android:id="@+id/luggageIv"
+        android:layout_width="49dp"
+        android:layout_height="47dp"
+        android:layout_below="@id/valetIv"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="1dp"
+        android:layout_toStartOf="@id/valetBtn"
+        app:srcCompat="@drawable/luggage" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        app:backgroundTint="@drawable/selector"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="#000000"
+        app:menu="@menu/nav_bar" />
+</RelativeLayout>

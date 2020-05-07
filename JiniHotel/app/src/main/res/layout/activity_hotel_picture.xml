@@ -1,46 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".hotelPicture">
 
-    <Button
-        android:id="@+id/uploadShopPic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="upload pictures"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/infoPic"
         android:layout_width="wrap_content"
+        android:fontFamily="@font/berlinregular"
         android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/uploadShopPic"
+        android:layout_marginTop="30dp"
         android:text="Pictures Uploaded"
-        android:textColor="#F44336"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.727" />
+        android:textColor="@color/orange" />
 
     <Button
+        android:id="@+id/uploadShopPic"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/addPicsBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/upload_btn"/>
+
+    <Button
+        android:layout_width="240dp"
+        android:layout_height="124dp"
         android:id="@+id/addPicsBtn"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/descriptionTv"
+        android:layout_centerInParent="true"
+        android:background="@drawable/addimage"/>
+
+    <TextView
+    android:id="@+id/headingTv"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/berlinregular"
+    android:text="Add Pictures"
+    android:layout_marginTop="150dp"
+    android:padding="10dp"
+    android:layout_marginLeft="10dp"
+    android:textColor="@color/orange"
+    android:textSize="30dp" />
+
+
+    <TextView
+        android:id="@+id/descriptionTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add pictures"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.373" />
+        android:fontFamily="@font/berlinregular"
+        android:text="Add the pictures of your hotel rooms and other services to attract the customers"
+        android:layout_below="@id/headingTv"
+        android:layout_marginTop="15dp"
+        android:padding="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

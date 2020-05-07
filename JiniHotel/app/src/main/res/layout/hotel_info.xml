@@ -5,24 +5,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Hotel_Info"
+    android:padding="20dp"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/hotelInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/berlinregular"
+        android:layout_marginTop="15dp"
+        android:padding="5dp"
+        android:text="Your Hotel"
+        android:textColor="@color/orange"
+        android:textSize="30dp" />
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textColorHint="@color/orange"-->
+<!--            android:hint="Hotel name" />-->
+
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+    <TextView
+        android:id="@+id/nameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:fontFamily="@font/berlinregular"
+        android:layout_marginTop="15dp"
+        android:padding="5dp"
+        android:textSize="20dp"/>
 
     <EditText
         android:id="@+id/hotelNameEt"
         android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Hotel Name"
+        android:padding="10dp"
         android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/addresssTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textColor="@color/black"
+        android:fontFamily="@font/berlinregular"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:textSize="20dp"/>
 
     <EditText
         android:id="@+id/hotelAddressEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Hotel Address"
-        android:inputType="textPersonName" />
+        android:ems="10"/>
+
+    <TextView
+        android:id="@+id/emailTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textColor="@color/black"
+        android:fontFamily="@font/berlinregular"
+        android:layout_marginTop="15dp"
+        android:padding="5dp"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/emailIDet"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:inputType="textEmailAddress" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,9 +99,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="50"
-            android:gravity="center"
+            android:padding="5dp"
+            android:gravity="start"
             android:text="Checkout Mode"
-
+            android:fontFamily="@font/berlinregular"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <RadioGroup
@@ -54,13 +118,17 @@
                 android:id="@+id/checkout24hr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/berlinregular"
+                style="@style/radio_button"
                 android:text="24 Hour"
                 android:layout_weight="50"/>
 
             <RadioButton
                 android:id="@+id/checkout12hr"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/berlinregular"
                 android:layout_height="wrap_content"
+                style="@style/radio_button"
                 android:text="12 Hour"
                 android:layout_weight="50"/>
         </RadioGroup>
@@ -80,10 +148,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="50"
-            android:text="Pool Facilities"
-            android:gravity="center"
-            android:textSize="20sp"
-            />
+            android:gravity="start"
+            android:padding="5dp"
+            android:text="Pool facilities"
+            android:fontFamily="@font/berlinregular"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <RadioGroup
             android:id="@+id/poolRadioGrp"
@@ -97,6 +167,7 @@
                 android:id="@+id/noPool"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/radio_button"
                 android:text="True"
                 android:layout_weight="50"/>
 
@@ -104,6 +175,7 @@
                 android:id="@+id/isPool"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                style="@style/radio_button"
                 android:text="False"
                 android:layout_weight="50"/>
         </RadioGroup>
@@ -120,9 +192,12 @@
             android:id="@+id/parkingTw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:layout_weight="50"
-            android:gravity="center"
-            android:text="Parking facility"
+            android:gravity="start"
+            android:text="Parking"
+            android:fontFamily="@font/berlinregular"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <RadioGroup
@@ -138,6 +213,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Valet"
+                style="@style/radio_button"
                 android:textAlignment="center"
                 android:layout_weight="33"/>
 
@@ -146,12 +222,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Self "
+                style="@style/radio_button"
                 android:layout_weight="33"/>
             <RadioButton
                 android:id="@+id/noBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="None"
+                style="@style/radio_button"
                 android:layout_weight="33"/>
         </RadioGroup>
     </LinearLayout>
@@ -164,17 +242,22 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
             android:layout_weight="50"
-            android:gravity="center"
+            android:gravity="start"
+            android:layout_gravity="center"
             android:text="Rating"
-            android:textSize="24sp"
-            />
+            android:fontFamily="@font/berlinregular"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <RatingBar
             android:id="@+id/ratingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:theme="@style/RatingBar"
+            android:progressTint="@color/orange"
             android:numStars="5"/>
 
 
@@ -183,8 +266,18 @@
 
     <Button
         android:id="@+id/nxtBtn"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next " />
+        android:elevation="100dp"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@drawable/button_orange_bg"
+        android:textColor="@color/white"
+        android:fontFamily="@font/berlinregular"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:text="NEXT " />
 
 </LinearLayout>
