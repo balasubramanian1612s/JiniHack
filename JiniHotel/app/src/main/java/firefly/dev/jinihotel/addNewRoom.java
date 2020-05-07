@@ -62,8 +62,8 @@ public class addNewRoom extends AppCompatActivity {
 
                 reference=reference.child(roomName.getText().toString());
                 reference.child("Tarrif").setValue(tarrif.getText().toString());
-
                 reference=reference.child("Amenities");
+
                 String com="";
                 if (dinnerCB.isChecked()){
 
@@ -92,15 +92,11 @@ public class addNewRoom extends AppCompatActivity {
                 }
 
 
-                AmenitiesGetter newData=new AmenitiesGetter(SpinPool.getSelectedItem().toString(),SpinWifi.getSelectedItem().toString(),SpinLaundry.getSelectedItem().toString(),com);
-                reference.setValue(newData);
+                AmenitiesGetter getter=new AmenitiesGetter(com,SpinLaundry.getSelectedItem().toString(),SpinWifi.getSelectedItem().toString(),SpinPool.getSelectedItem().toString());
+                reference.setValue(getter);
 
-                finish();
-                overridePendingTransition(0,0);
-                startActivity(new Intent(addNewRoom.this,hotelRoom.class));
-                overridePendingTransition(0,0);
-
-
+                Intent intent=new Intent(addNewRoom.this,hotelRoom.class);
+                startActivity(intent);
 
             }
         });

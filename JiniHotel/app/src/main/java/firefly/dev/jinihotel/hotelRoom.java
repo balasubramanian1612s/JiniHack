@@ -1,6 +1,7 @@
 package firefly.dev.jinihotel;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -10,10 +11,12 @@ import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.method.ArrowKeyMovementMethod;
 import android.util.Log;
 import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,15 +29,7 @@ public class hotelRoom extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference reference;
-    int i=1;
-
     FloatingActionButton floatingActionButton;
-
-
-
-    private static final String chan_ID = "1234";
-    private static final String chan_name = "test";
-    private static final String chan_desc = "descrbe";
 
 
 
@@ -46,8 +41,6 @@ public class hotelRoom extends AppCompatActivity {
         floatingActionButton=findViewById(R.id.addRoom);
         database=FirebaseDatabase.getInstance();
         reference=database.getReference().child("Hotels").child("HotelId").child("Rooms");
-
-        getData();
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,39 +54,31 @@ public class hotelRoom extends AppCompatActivity {
 
 
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
 
-            NotificationChannel chan = new NotificationChannel(chan_ID,chan_name, NotificationManager.IMPORTANCE_DEFAULT);
-            chan.setDescription( chan_desc );
-            NotificationManager manager = getSystemService( NotificationManager.class );
-            manager.createNotificationChannel(chan);
-        }
-
-
-
-
-
-
-
-    }
-
-    public void getData(){
-
-        reference.addValueEventListener(new ValueEventListener() {
+        ChildEventListener listener=new ChildEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-                for (DataSnapshot ds: dataSnapshot.getChildren()){
+                AmenitiesGetter getter=dataSnapshot.child("Amenities").getValue(AmenitiesGetter.class);
+                Log.i("jnasas",getter.toString());
 
-                    //Log.i("StringsKey",ds.getKey());
-                    display(ds.getKey(),"Hi");
-                    AmenitiesGetter newData=ds.child("Amenities").getValue(AmenitiesGetter.class);
-                    Log.i("StringsKey",newData.getComplementry());
-                    Log.i("StringsLan",newData.getFreeLaundry());
-                    Log.i("StringsWifi",newData.getFreeWifi());
-                   Log.i("StringsPool",newData.getPool());
 
-                }
+
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
             }
 
@@ -101,23 +86,12 @@ public class hotelRoom extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        };
+        reference.addChildEventListener(listener);
 
 
-    }
 
 
-    private void display(String title,String text){
-
-        i=i++;
-        NotificationCompat.Builder  bui;
-        bui = new NotificationCompat.Builder(this,chan_ID )
-                .setContentTitle( title )
-                .setContentText(text)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                .setSmallIcon(R.drawable.ic_launcher_foreground);
-        NotificationManagerCompat manager = NotificationManagerCompat.from(this);
-        manager.notify(i,bui.build());
     }
 
 
