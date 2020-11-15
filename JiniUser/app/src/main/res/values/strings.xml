@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">JiniUser</string>
+    <string name="default_web_client_id" translatable="false">637317936718-krpjghh7lvo5b7bhdosrftivq21nh687.apps.googleusercontent.com</string>
 </resources>

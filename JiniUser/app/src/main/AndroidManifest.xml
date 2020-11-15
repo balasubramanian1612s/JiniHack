@@ -29,15 +29,6 @@
             </intent-filter>
         </activity>
 
-
-
-        <activity android:name=".scanningQR_page" />
-        <activity android:name=".TouristPlaces" />
-        <activity android:name=".hotelViewPage" />
-        <activity android:name=".bookingPage" />
-
-
-
         <activity android:name=".bookings" />
         <activity android:name=".ValetService" />
         <activity android:name=".bookingInfo" />
